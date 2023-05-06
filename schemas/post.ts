@@ -9,6 +9,14 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      description: 'What is affiliate marketing (and how to use it to your advantage)',
+    }),
+    defineField({
+      name: 'titleDescription',
+      title: 'Title Description',
+      type: 'string',
+      description:
+        'In the internet age, content creators, reviewers, and influencers have entered customers’ circle of trust — and businesses have taken note.',
     }),
     defineField({
       name: 'slug',
@@ -18,6 +26,12 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
+    }),
+    defineField({
+      name: 'readingTime',
+      title: 'Reading Time',
+      type: 'number',
+      description: 'How much time require to read your article',
     }),
     defineField({
       name: 'author',
@@ -32,6 +46,12 @@ export default defineType({
       options: {
         hotspot: true,
       },
+    }),
+    defineField({
+      name: 'products',
+      title: 'Products',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'product'}}],
     }),
     defineField({
       name: 'categories',
